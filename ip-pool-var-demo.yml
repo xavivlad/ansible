@@ -1,15 +1,9 @@
 ---
-- name: Run Arista command
-  arista.eos.eos_command:
-    commands: show ip int br
-  when: ansible_network_os == 'arista.eos.eos'
+- name: Ping devices
+  hosts: all
+  gather_facts: false
+  become: false
 
-- name: Run Cisco NXOS command
-  cisco.nxos.nxos_command:
-    commands: show ip int br
-  when: ansible_network_os == 'cisco.nxos.nxos'
-
-- name: Run Vyos command
-  vyos.vyos.vyos_command:
-    commands: show interface
-  when: ansible_network_os == 'vyos.vyos.vyos'
+  tasks:
+  - name: Pinging Host
+    action: ping
