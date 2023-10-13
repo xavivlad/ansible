@@ -6,4 +6,4 @@
 
   tasks:
   - name: Pinging Host
-    action: ping
+    ansible.builtin.ping:
