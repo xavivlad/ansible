@@ -1,6 +1,6 @@
 ---
 - name: Ping devices
-  hosts: all
+  hosts:  all
   gather_facts: false
   become: false
 
